@@ -15,7 +15,7 @@ int prepararJogador (Jogador * player) {
   andar.tipo = 1;
   telhado.tipo = 2;
   parque.tipo = 3;
-  for (int i=0; i<2; i++) {
+  for (int i=0; i<12; i++) {
     adicionarLista(player->pecas, andar);
   }
 
