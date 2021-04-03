@@ -100,3 +100,17 @@ int quantidadePeca (Lista * li, int tipo) {
   }
   else return 0;
 }
+
+// libera a lista
+int limparLista(Lista *l) {
+  if (l != NULL) {
+    Elemento *aux;
+    while (*l != NULL) {
+      aux = *l;
+      *l = aux->prox;
+      free(aux);
+    }
+    free(l);
+    return 1;
+  }
+}

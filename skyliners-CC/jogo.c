@@ -15,7 +15,7 @@ int prepararJogador (Jogador * player) {
   andar.tipo = 1;
   telhado.tipo = 2;
   parque.tipo = 3;
-  for (int i=0; i<12; i++) {
+  for (int i=0; i<2; i++) {
     adicionarLista(player->pecas, andar);
   }
 
@@ -28,6 +28,13 @@ int prepararJogador (Jogador * player) {
 
   return 1;
 }
+
+// libera as memórias dos jogadores
+int liberaJogador (Jogador * player1) {
+  limparLista(player1->pecas);
+  free(player1);
+}
+
 
 // Analizar se a jogada é possível
 int jogada (Lista * jogador, int tipo, Pilha * predio) {
@@ -65,7 +72,6 @@ int topoPilha (Pilha * predio) {
   acessarPilha(predio, pPe);
   return pe.tipo;
 }
-
 
 
 // cria a cidade: matriz de pilhas.
@@ -181,12 +187,11 @@ int inicioAleatorio (Matriz cidade) {
 }
 
 // função de vista, e de atualização dos pontos.
-// se o ultimo parametro for 0 apenas retorna a pontuação do jogador. Se for 1, mostra sua vista
+// se o ultimo parametro for 0 apenas retorna a pontuação do jogador. Se for 1, mostra sua vista do mesmo
 int vistaePontos(Matriz cidade, int jogador, int mostrar) {
-  int matriz[5][5];
   int pontos = 0; // aproveitando que essa função percorre a cidade trocentas vezes, ela retorna os pontos também
-  // essa matriz vai receber as alturas, mas o foco mesmo é converter, independente da vista, para uma matriz sempre voltada para o mesmo lado
-  // a função absolute eu criei pra ajudar a fazer operações mais simples com módulo dos números
+  int matriz[5][5]; // essa matriz vai receber as alturas, mas o foco mesmo é converter, independente da vista, para uma matriz mapa sempre voltada para o mesmo lado
+  // eu criei a função absolute pra ajudar a fazer operações mais simples com módulo dos números
   // o código se baseia em criar um "mapa" visual com 0 onde não deve ser mostrado nada e de 1 a 5, dependendo da posição do predio, mais a frente ou mais atrás 
 
   switch (jogador) {
@@ -251,8 +256,8 @@ int vistaePontos(Matriz cidade, int jogador, int mostrar) {
   }
   
   for (int c=0; c<5; c++) {
-    // o código vai percorrer a matriz de coluna em coluna, e dependendo do valor ali, vai repetir na matriz maior
-    int rep = 0; // repetições/altura , vai indicar quantas vezes o tipo de andar(no caso pra diferenciar a largura) vai ser colocada
+    // o código vai percorrer a matriz mapa de coluna em coluna, e dependendo do valor X ali, vai repetir na matriz maior X vezes
+    int rep = 0; // repetições/altura , vai indicar quantas vezes o tipo de andar (no caso pra diferenciar a largura) vai ser colocada
     int dis = 0;  // "distância"/largura, indica a largura do andar, dependendo do quão distante está na vista
     int cont = 0; // este contador vai ser usado para não perder a posição em que foi repetido o ultimo andar
     
@@ -261,12 +266,12 @@ int vistaePontos(Matriz cidade, int jogador, int mostrar) {
     for (int l=0; l<5; l++) {
       // se o valor na matriz for zero ele é ignorado, pois não apareceria na vista de forma alguma
       if (matriz[l][c] != 0) {
-        rep = matriz[l][c]; // como na matriz vista
+        rep = matriz[l][c];
         dis = l; int x = 1;
         
         // agora vai preencher a matriz visao repetindo os valores onde serão realmente visiveis
         for (int i=cont; i<rep; i++) {
-          // esse cont sempre é salvo quando quando as repetições acabam, para no próximo ciclo começar daí
+          // esse cont sempre é salvo quando as repetições acabam, para no próximo ciclo começar daí
           if (rep == 0) {
             cont = i;
             break;
@@ -279,7 +284,7 @@ int vistaePontos(Matriz cidade, int jogador, int mostrar) {
   
   // contando os pontos
   for (int c=0; c<5; c++) {
-    int aux;
+    int aux = 0;
     for (int l=max; l!=-1; l--) {
       if (visao[l][c] != 0 && visao[l][c] != aux) {
         pontos++;
@@ -306,6 +311,16 @@ int vistaePontos(Matriz cidade, int jogador, int mostrar) {
   }
 
   return pontos;
+}
+
+int limparMatriz (Matriz cidade) {
+  for (int i=0; i<5; i++) { 
+    for (int j=0; j<5; j++) {
+      limparPilha(cidade[i][j]);
+    }
+  }
+  free(cidade);
+  return 1;
 }
 
 

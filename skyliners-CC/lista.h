@@ -14,3 +14,5 @@ e retorna a posição da primeira desse tipo (e 0 se não existir) */
 int acessar (Lista *, int);
 
 int quantidadePeca (Lista * , int );
+
+int limparLista(Lista *); 

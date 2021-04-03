@@ -30,7 +30,7 @@ int main () {
   printf(" -> Não podem ser jogadas peças nas posições marcadas com [*] \n\n");
   printf(" O jogo inicia com 6 andares colocados aleatoriamente ao redor do parque cetral. \n\n");
   
-  int fim = 0, vencedor = 0, ptsVencedor = 0;
+  int fim = 0;
 
   // coloca o parque e as 6 peças aleatórias em volta
   inicioAleatorio(cidade);
@@ -127,24 +127,43 @@ int main () {
         }  
       }
 
-
-      playerDaRodada->pontos = vistaePontos(cidade, i, 0);
-
-      // pra não encerrar a partida antes, o for vai terminar o ciclo mas o while não, e fica repetindo até cair nesse if 
+      // quando a quantidade de peças do tipo 1 (andar) acabar, marca essa como a ultima rodada
       if (quantidadePeca(playerDaRodada->pecas, 1) == 0) {
         fim = 1;
-
-        // atualizando o player que está ganhando
-        if (playerDaRodada->pontos > ptsVencedor) {
-          ptsVencedor = playerDaRodada->pontos;
-          vencedor = i; // lembrando que i é o indice do for que indica quem está na rodada
-        }
       }
 
-      playerDaRodada->pontos = vistaePontos(cidade, i, 0);
       system("cls");
     }
+    // o while vai ser encerrado se o ultimo for for a ultima rodada  
     if (fim == 1) break;
+  }
+
+  // atualizando os pontos 
+
+  player1->pontos = vistaePontos(cidade, 1, 0);
+  player2->pontos = vistaePontos(cidade, 2, 0);
+  player3->pontos = vistaePontos(cidade, 3, 0);
+  player4->pontos = vistaePontos(cidade, 4, 0);
+
+  // conferindo o vencedor 
+  int vencedor = 0, ptsVencedor = 0;
+
+  if (player1->pontos > ptsVencedor) {
+    vencedor = 1; 
+    ptsVencedor = player1->pontos;
+  }
+  if (player2->pontos > ptsVencedor) {
+    vencedor = 2; 
+    ptsVencedor = player2->pontos;
+  }
+  if (player3->pontos > ptsVencedor) {
+    vencedor = 3; 
+    ptsVencedor = player3->pontos;
+  }
+    
+  if (player4->pontos > ptsVencedor) {
+    vencedor = 4; 
+    ptsVencedor = player4->pontos;
   }
 
   mostrarMatriz(cidade);
@@ -160,6 +179,15 @@ int main () {
   printf("Esta é a sua vista: \n");
   vistaePontos(cidade, vencedor, 1);
   printf("Pontos: %d\n", ptsVencedor);
+
+
+  // liberando tudo
+  liberaJogador(player1);
+  liberaJogador(player2);
+  liberaJogador(player3);
+  liberaJogador(player4);
+
+  limparMatriz(cidade);
 
   return 0;
 }
