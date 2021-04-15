@@ -11,7 +11,7 @@ Ao inicio do jogo é colocado 1 parque no centro da cidade e 6 andares são post
 A partir deste ponto os jogadores começam a partida seguindo a ordem (sul->oeste->norte->leste) podendo jogar suas peças remanescentes e ver sua vista e pontos.
 A partida finaliza quando acabar a rodada em que for jogado o último andar de algum jogador.
 
-###São três tipos de peças:
+### São três tipos de peças:
 * Parque: Têm-se 1 de inicio e só pode ser jogada no chão (em casas que ainda não possuam nenhuma outra peça).
 * Andar: Inicia-se com 12 delas, e pode ser jogada no chão, ou em cima de outros andares (nunca em cima de parques ou tetos).
 * Teto: Inicia-se com 2 e só pode ser jogadas sobre andares.
