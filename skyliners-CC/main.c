@@ -166,28 +166,21 @@ int main () {
     ptsVencedor = player4->pontos;
   }
 
+  printf("\n\n   ===== FIM DA PARTIDA =====\n\n");
+
   mostrarMatriz(cidade);
   
   printf("\n");
-  printf("O vencedor é o jogador com vista ");
-  if (vencedor == 1) printf("Sul");
-  if (vencedor == 2) printf("Oeste");
-  if (vencedor == 3) printf("Norte");
-  if (vencedor == 4) printf("Leste");
+  printf("   O vencedor é o jogador com vista ");
+  if (vencedor == 1) printf("SUL");
+  if (vencedor == 2) printf("OESTE");
+  if (vencedor == 3) printf("NORTE");
+  if (vencedor == 4) printf("LESTE");
 
   printf("\n");
   printf("Esta é a sua vista: \n");
   vistaePontos(cidade, vencedor, 1);
-  printf("Pontos: %d\n", ptsVencedor);
-
-
-  // liberando tudo
-  liberaJogador(player1);
-  liberaJogador(player2);
-  liberaJogador(player3);
-  liberaJogador(player4);
-
-  limparMatriz(cidade);
+  printf("Pontos do Vencedor: %d\n", ptsVencedor);
 
   return 0;
 }
