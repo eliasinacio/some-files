@@ -10,13 +10,12 @@
 `<main>`
 ###### conteúdo "paralelo" que tem relação ao main ≠ sidebar: 
 `<aside>` 
-###### rodapé: 
-`<footer>`
-
-###### artigo, "partes": 
+###### artigo, como uma seção sem ligação com o conteúdo principal da página: 
 `<article>`
 ###### seção de conteúdo, geralmente com um título: 
 `<section>`
+###### rodapé: 
+`<footer>`
 
 #### meta (básicos)
 
