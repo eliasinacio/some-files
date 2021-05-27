@@ -72,7 +72,7 @@ Existem tags que quebram linhas e outras que são em linha.
       <td> <!-- data cell (elemento simples) --> </td>
       <td> <!-- data cell (elemento simples) --> </td>
     </tr>
-  </body>
+  </tbody>
   
   <tfoot> <!-- rodapé -->
     <tr> <!-- linha -->
@@ -80,6 +80,7 @@ Existem tags que quebram linhas e outras que são em linha.
       <td> ... </td>
       <td> ... </td>
     </tr>
+  </tfoot> 
 </table>
 ~~~
 
