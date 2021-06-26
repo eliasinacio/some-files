@@ -85,13 +85,13 @@ Alterar a url do repositório remoto:
 $ git remote set-url <nome> <url>
 
 
-GitHub e Open Source projects
+## cGitHub e Open Source projects
 
-Fork 
-Cria uma cópia do repositório no "meu" GitHub. A partir daí pode ser clonado em uma máquina local e atualizado.
+### Fork 
+#### Cria uma cópia do repositório no "meu" GitHub. A partir daí pode ser clonado em uma máquina local e atualizado.
 
-Pull Request
-É a tentativa de devolver as atualizações da versão do projeto que está no nosso repositório para o repositório original.
+### Pull Request
+#### É a tentativa de devolver as atualizações da versão do projeto que está no nosso repositório para o repositório original.
 
 HEAD
 é o apontador da branch atual
