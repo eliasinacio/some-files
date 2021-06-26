@@ -1,61 +1,68 @@
 # Git commands
 
-**Iniciar um repositório no diretório atual:**
-$ git init
+**Iniciar um repositório no diretório atual:** 
+`$ git init`
 
 **Adiciona arquivos para o Git monitorar:**
-$ git add . 
+`$ git add`
 
 **Commit:**
-$ git commit -m "comentário para o commit"
+`$ git commit -m "comentário para o commit"`
 
 **Apontar o repositório local para o repositório remoto:**
-$ git remote add <nome> <url> 
+`$ git remote add <nome> <url> `
 
 **Push pro repositório remoto:**
-$ git push 
+`$ git push`
 ou 
-$ git push <nome> master
+`$ git push <nome> master`
 
 **Clonar repositórios:**
-$ git clone <url>
+`$ git clone <url>`
 
 **Atualizar repositório local com o remoto:**
-$ git pull
+`$ git pull
 ou 
-$ git pull <nome> master
+`$ git pull <nome> master`
 
-Status do Repositório:
-$ git status
+**Status do Repositório:**
+`$ git status`
 
-Histórico de commits:
-$ git log 
-$ git log --oneline (resumido)
-$ git log --stat (mais informações)
-$ git log --parents (mostra os pais dos commits)
-$ git log --decorate (mostra para qual commit a branch está apontando)
+**Histórico de commits:**
+`$ git log `
+  
+`$ git log --oneline (resumido)`
+  
+`$ git log --stat (mais informações)` 
+  
+`$ git log --parents (mostra os pais dos commits)`
+  
+`$ git log --decorate (mostra para qual commit a branch está apontando)`
 
-Verificar diferenças em arquivos:
-$ git diff  (não adicionados)
-$ git diff --staged  (já adicionados mas não comitados)
-$ git diff <cod. commit>..<cod. commit> (modif. entre os dois commits)
+**Verificar diferenças em arquivos:**
+  
+`$ git diff  (não adicionados)`
 
-Remover arquivos:
-$ git rm <arquivo>
+`$ git diff --staged  (já adicionados mas não comitados)`
 
-Renomear arquivos:
-$ git mv <nome-antigo> <nome-novo>
+`$ git diff <cod. commit>..<cod. commit> (modif. entre os dois commits)`
 
-Mover arquivos: 
-$ git mv <arquivo> <novo-diretório> (o diretório já deve existir antes)
+**Remover arquivos:**
+`$ git rm <arquivo>`
 
-Remover alterações ainda não rastreadas (stage):
-$ git checkout -- <arquivo>
+**Renomear arquivos:**
+`$ git mv <nome-antigo> <nome-novo>`
 
-Remover alterações do stage (rastreamento):
-$ git reset -- <arquivo>
+**Mover arquivos:**
+`$ git mv <arquivo> <novo-diretório> (o diretório já deve existir antes)`
 
-Remover alterações do stage e apagar alterações: 
+**Remover alterações ainda não rastreadas (stage):**
+`$ git checkout -- <arquivo>`
+
+**Remover alterações do stage (rastreamento):**
+`$ git reset -- <arquivo>`
+
+**Remover alterações do stage e apagar alterações: **
 $ git reset --hard (RETORNA AO ÚLTIMO COMMIT)
 
 Remover alterações já comitadas:
