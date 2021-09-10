@@ -196,7 +196,7 @@ São as "fotos" das versões, marcações temporais
 ou
 `$ git tag -a <tag> -m "mensagem"`
 
-**Criar tag para um commit específico passado:
+**Criar tag para um commit específico passado:**
 
 `$ git tag <tag> <cód.commit>`
 
