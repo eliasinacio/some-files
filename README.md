@@ -2,6 +2,6 @@
 
 São algumas anotações de estudo minhas que faço enquanto estudo, para fixar conteúdos, tags, comandos, etc.
 
-Estou deixando-as disponíveis para caso possa ajudar alguém. 
+Estou deixando-as disponíveis para caso possa ajudar alguém. Alguns estão em inglês pois também estive treinando isso.
 
 É algo bem simples e "prático" para consultas rápidas mas, claro, não substitui documentações e tutoriais oficiais e mais elaborados.
