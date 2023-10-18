@@ -1,6 +1,6 @@
 ### Arquivos de ajuda
 
-São algumas anotações de estudo minhas que faço enquanto estudo, para fixar conteúdos, tags, comandos, etc.
+São algumas anotações e docs que faço enquanto estudo, para fixar conteúdos, comandos, etc.
 
 Estou deixando-as disponíveis para caso possa ajudar alguém. Alguns estão em inglês pois também estive treinando isso.
 
